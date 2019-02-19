@@ -48,7 +48,7 @@ class BoardController extends Controller
         foreach ($emptyIndexes as $index) {
             $tempBoard = $board; // Make copy of current board
             $tempBoard[$index] = $player;
-            $count = $this->countWinningMoves($board, 'o');
+            $count = $this->countWinningMoves($tempBoard, 'o');
             if ($count > $maxWinningMoves) {
                 $maxIndex = $index;
                 $maxWinningMoves = $count;
